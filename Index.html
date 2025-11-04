@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>From Kartik to My Buggu</title>
+  <style>
+    :root{
+      --pink:#ffd6e8;
+      --deep:#ff9ec9;
+      --text:#3a2a2f;
+      --glass: rgba(255,255,255,0.6);
+    }
+    html,body{height:100%;margin:0;font-family: 'Segoe UI', Roboto, system-ui, -apple-system; background: linear-gradient(180deg,var(--pink),#ffeef8 60%); color:var(--text);}
+    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:40px;box-sizing:border-box}
+    .card{width:900px;max-width:96%;background:linear-gradient(135deg, rgba(255,255,255,0.85), rgba(255,240,250,0.75));border-radius:18px;padding:34px;box-shadow:0 20px 50px rgba(50,10,40,0.18);position:relative;overflow:hidden}
+
+    /* snow */
+    .snow{pointer-events:none;position:absolute;inset:0;z-index:1}
+    .snow .flake{position:absolute;top:-10%;font-size:18px;opacity:0.9;animation:fall linear infinite}
+    @keyframes fall{to{transform:translateY(120vh) rotate(360deg)}}
+
+    h1{margin:0;font-size:34px;letter-spacing:0.2px}
+    .sub{margin-top:6px;color:#5b3b44}
+
+    .content{position:relative;z-index:2;display:flex;gap:24px;align-items:flex-start}
+    .left{flex:1}
+    .right{width:320px;max-width:40%;min-width:260px}
+
+    .message{background:var(--glass);padding:18px;border-radius:12px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.6)}
+    .line{font-size:18px;line-height:1.6;margin:8px 0;opacity:0;transform:translateY(8px);animation:fadein 1s forwards;}
+    .line.delay1{animation-delay:0.6s}
+    .line.delay2{animation-delay:1.4s}
+    .line.delay3{animation-delay:2.2s}
+    .line.delay4{animation-delay:3s}
+
+    @keyframes fadein{to{opacity:1;transform:none}}
+
+    .heart{display:inline-block;margin-top:14px;background:linear-gradient(135deg,var(--deep),#ff7ab6);color:white;padding:12px 18px;border-radius:999px;cursor:pointer;box-shadow:0 8px 20px rgba(255,90,140,0.18);border:none}
+
+    .hidden-note{margin-top:12px;padding:12px;border-radius:10px;background:rgba(255,255,255,0.92);box-shadow:0 8px 30px rgba(40,10,30,0.07);display:none}
+
+    .credit{font-size:13px;color:#6b4b57;margin-top:10px}
+
+    /* music iframe box */
+    .music-box{background:rgba(250,240,250,0.6);padding:12px;border-radius:12px;text-align:center}
+    .music-btn{display:inline-block;padding:8px 12px;border-radius:10px;background:#fff;border:1px solid rgba(0,0,0,0.06);cursor:pointer}
+
+    /* small responsive */
+    @media (max-width:760px){.content{flex-direction:column}.right{width:100%;max-width:none}}
+
+    /* subtle candle glow */
+    .candle{position:absolute;right:28px;bottom:28px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(255,230,240,0.6));box-shadow:0 0 60px rgba(255,150,200,0.18);opacity:0.9;z-index:0}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="snow" id="snow"></div>
+      <div class="candle" aria-hidden="true"></div>
+      <div class="content">
+        <div class="left">
+          <h1>From Kartik to My Buggu</h1>
+          <div class="sub">A little winter surprise — just open, breathe, and smile.</div>
+
+          <div class="message" style="margin-top:18px">
+            <div class="line delay1"><strong>Hey Buggu...</strong> tu hass deti hai na, toh lagta hai sab theek hai.</div>
+            <div class="line delay2">Mera din tabhi banta hai jab tu muskurati hai — agar tu smile kar deti hai, mera poora din ban jaata hai.</div>
+            <div class="line delay3">Door rehke, sabse chhupake milna asaan nahi hai. Family se chupke, raaton ko teri video call ka wait, aur thodi si udaasi bhi — sab aata hai.</div>
+            <div class="line delay4">Par main jaanta hoon, yeh doori zyada der tak nahi chalegi. Ek din hum har subah aur har raat saath mein jeeyenge. <em>Gallan teriyan yaad aan diyan,</em> raat nu neend na aave — par main hoon na, Buggu.</div>
+
+            <button class="heart" id="heartBtn">❤ Click for a little secret</button>
+
+            <div class="hidden-note" id="note">
+              <div style="font-weight:600">Tere bina dil lagda hi nahi, Buggu ✨</div>
+              <div style="margin-top:6px">Soon, this distance will melt — just like winter fades into spring. — <strong>Kartik</strong></div>
+            </div>
+
+            <div class="credit">From Kartik to my Buggu — played with love, sent with hope.</div>
+          </div>
+
+        </div>
+
+        <div class="right">
+          <div class="music-box">
+            <div style="font-weight:600;margin-bottom:8px">Play the mood — Afreen Afreen (instrumental)</div>
+            <!-- YouTube embed: autoplay might be blocked by browser; user can press play -->
+            <div style="position:relative;padding-top:56.25%">
+              <iframe id="yt" src="https://www.youtube.com/embed/ktj0XQfT5vU?rel=0&controls=1" title="Afreen Afreen" style="position:absolute;inset:0;border:0;border-radius:8px" allow="autoplay; encrypted-media; fullscreen"></iframe>
+            </div>
+            <div style="margin-top:10px;font-size:13px;color:#6b4b57">If the player doesn't autoplay, click play in the box above — or <a href="https://www.youtube.com/results?search_query=afreen+afreen+instrumental" target="_blank">open Afreen Afreen</a>.</div>
+          </div>
+
+          <div style="margin-top:16px;text-align:center">
+            <div style="font-weight:600;margin-bottom:8px">Share & Tips</div>
+            <div style="font-size:13px;color:#5b3b44">Kartik can simply send this page URL to Kritika, or download and send the file. To make it extra: video call her while she opens it ❤️</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // generate soft snow
+    const snow = document.getElementById('snow');
+    const flakes = 40;
+    for(let i=0;i<flakes;i++){
+      const f = document.createElement('div');
+      f.className='flake';
+      f.style.left = Math.random()*100 + '%';
+      f.style.fontSize = (8 + Math.random()*20) + 'px';
+      f.style.opacity = (0.4 + Math.random()*0.7);
+      const dur = 8 + Math.random()*22;
+      f.style.animationDuration = dur + 's';
+      f.style.animationDelay = (-Math.random()*20) + 's';
+      f.innerHTML = '❄';
+      snow.appendChild(f);
+    }
+
+    // heart button toggle
+    const heartBtn = document.getElementById('heartBtn');
+    const note = document.getElementById('note');
+    heartBtn.addEventListener('click', ()=>{
+      if(note.style.display==='block'){
+        note.style.display='none';
+        heartBtn.innerText='❤ Click for a little secret';
+      } else {
+        note.style.display='block';
+        heartBtn.innerText='Close';
+      }
+    });
+
+    // gentle focus on first anim lines after load
+    window.addEventListener('load', ()=>{
+      // ensure the first lines animate even if cached
+    });
+  </script>
+</body>
+</html>
